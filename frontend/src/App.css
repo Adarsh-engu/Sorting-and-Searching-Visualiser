@@ -1,0 +1,307 @@
+/* GLOBAL THEME */
+:root {
+  --bg-color: #0f172a;
+  /* Deep slate */
+  --card-bg: rgba(30, 41, 59, 0.7);
+  /* Glass slate */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-blue: #38bdf8;
+  --accent-blue-glow: rgba(56, 189, 248, 0.4);
+  --accent-red: #f43f5e;
+  --accent-red-glow: rgba(244, 63, 94, 0.6);
+  --accent-green: #10b981;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  background-image: radial-gradient(circle at top right, #1e293b 0%, transparent 40%);
+  min-height: 100vh;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.app-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px var(--accent-blue-glow);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+/* LAYOUT GRIDS */
+.main-layout {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* GLASSMORPHISM CARDS */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* SIDEBAR CONTROLS */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controls-card h3,
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--accent-blue);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.custom-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+}
+
+.speed-slider {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.primary-btn {
+  background: var(--accent-blue);
+  color: #0f172a;
+}
+
+.primary-btn:hover {
+  background: #7dd3fc;
+  box-shadow: 0 0 15px var(--accent-blue-glow);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.secondary-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* EXPLANATION INFO CARD */
+.desc-text {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.complexity-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: monospace;
+}
+
+.time-badge {
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+}
+
+.space-badge {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-green);
+  border: 1px solid var(--accent-green);
+}
+
+/* VISUALIZATION AREA */
+.visualization-area {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.status-card {
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.status-card h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+.progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: var(--accent-blue);
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px var(--accent-blue);
+}
+
+/* ARRAY ANIMATION AND STYLING */
+.canvas {
+  display: flex;
+  justify-content: center;
+}
+
+.array-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px 10px 20px 10px;
+  gap: 8px;
+  width: 100%;
+}
+
+.array-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.array-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.array-container::-webkit-scrollbar-thumb {
+  background: var(--text-muted);
+  border-radius: 4px;
+}
+
+/* THE MAGIC: SMOOTH CSS TRANSITIONS */
+.array-box {
+  min-width: 45px;
+  background-color: var(--accent-blue);
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  /* Keeps text at the bottom of the bar */
+  padding-bottom: 8px;
+  box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.2);
+  /* This handles the smooth growing/shrinking and color changes */
+  transition: height 0.3s ease-in-out, background-color 0.2s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.search-box {
+  min-height: 50px;
+  border-radius: 8px;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.value-label {
+  color: #0f172a;
+  font-weight: 800;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* THE GLOWING ACTIVE STATE */
+.array-box.active {
+  background-color: var(--accent-red);
+  transform: translateY(-8px) scale(1.05);
+  /* Lifts the bar up smoothly */
+  box-shadow: 0 10px 25px var(--accent-red-glow), inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.array-box.active .value-label {
+  background: white;
+  color: var(--accent-red);
+}
